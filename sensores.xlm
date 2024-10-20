@@ -1,0 +1,131 @@
+?xml version="1.0" encoding="utf-8" ?>
+<!-- SQL XML created by WWW SQL Designer, https://github.com/ondras/wwwsqldesigner/ -->
+<!-- Active URL: https://sql.toad.cz/?keyword=sensores_farmtech_fase2 -->
+<sql>
+<datatypes db="mysql">
+    <group label="Numeric" color="rgb(238,238,170)">
+      <type label="Integer" length="0" sql="INTEGER" quote=""/>
+      <type label="INT" length="0" sql="INT" quote=""/>
+      <type label="DOUBLE" length="0" sql="DOUBLE" quote=""/>
+    </group>
+
+    <group label="Character" color="rgb(255,200,200)">
+      <type label="Varchar" length="1" sql="VARCHAR" quote="'"/>
+    </group>
+
+    <group label="Date &amp; Time" color="rgb(200,255,200)">
+      <type label="Datetime" length="0" sql="DATETIME" quote="'"/>
+      <type label="Timestamp" length="0" sql="TIMESTAMP" quote="'"/>
+    </group>
+  </datatypes><table x="506" y="375" name="cultura">
+<row name="idcultura" null="1" autoincrement="1">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="nome" null="1" autoincrement="0">
+<datatype>VARCHAR</datatype>
+<default>NULL</default></row>
+<row name="tipo" null="1" autoincrement="0">
+<datatype>VARCHAR</datatype>
+<default>NULL</default></row>
+<row name="necessidade_hidrica" null="1" autoincrement="0">
+<datatype>DOUBLE</datatype>
+<default>NULL</default></row>
+<row name="necessidade_nutrientes" null="1" autoincrement="0">
+<datatype>DOUBLE</datatype>
+<default>NULL</default></row>
+<row name="indice_ph" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<key type="PRIMARY" name="">
+<part>idcultura</part>
+</key>
+</table>
+<table x="268" y="266" name="talhao">
+<row name="idtalhao" null="1" autoincrement="1">
+<datatype>INTEGER</datatype>
+<default>NULL</default><relation table="cultura" row="idcultura" />
+<relation table="produtor" row="idprodutor" />
+</row>
+<row name="area" null="1" autoincrement="0">
+<datatype>DOUBLE</datatype>
+<default>NULL</default></row>
+<row name="localização" null="1" autoincrement="0">
+<datatype>VARCHAR</datatype>
+<default>NULL</default></row>
+<key type="PRIMARY" name="">
+<part>idtalhao</part>
+</key>
+</table>
+<table x="32" y="239" name="produtor">
+<row name="idprodutor" null="1" autoincrement="1">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="nomeprodutor" null="1" autoincrement="0">
+<datatype>VARCHAR</datatype>
+<default>NULL</default></row>
+<row name="fazenda" null="1" autoincrement="0">
+<datatype>VARCHAR</datatype>
+<default>NULL</default></row>
+<row name="cidade" null="1" autoincrement="0">
+<datatype>VARCHAR</datatype>
+<default>NULL</default></row>
+<key type="PRIMARY" name="">
+<part>idprodutor</part>
+</key>
+<comment>dados do produtor </comment>
+</table>
+<table x="922" y="73" name="sensorph">
+<row name="idsensorph" null="1" autoincrement="1">
+<datatype>INTEGER</datatype>
+<default>NULL</default><relation table="cultura" row="idcultura" />
+</row>
+<row name="dt_leitura" null="1" autoincrement="0">
+<datatype>DATETIME</datatype>
+<default>NULL</default></row>
+<row name="valor_leitura" null="1" autoincrement="0">
+<datatype>DOUBLE</datatype>
+<default>NULL</default></row>
+<row name="hora_leitura" null="1" autoincrement="0">
+<datatype>TIMESTAMP</datatype>
+<default>NULL</default></row>
+<key type="PRIMARY" name="">
+<part>idsensorph</part>
+</key>
+</table>
+<table x="902" y="285" name="sensorumidade">
+<row name="idsensorumidade" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default><relation table="cultura" row="idcultura" />
+</row>
+<row name="dt_leitura" null="1" autoincrement="0">
+<datatype>DATETIME</datatype>
+<default>NULL</default></row>
+<row name="valor_leit" null="1" autoincrement="0">
+<datatype>DOUBLE</datatype>
+<default>NULL</default></row>
+<row name="hora_leitura" null="1" autoincrement="0">
+<datatype>TIMESTAMP</datatype>
+<default>NULL</default></row>
+<key type="PRIMARY" name="">
+<part>idsensorumidade</part>
+</key>
+</table>
+<table x="912" y="561" name="sensorpk">
+<row name="idsensorpk" null="1" autoincrement="1">
+<datatype>INTEGER</datatype>
+<default>NULL</default><relation table="cultura" row="idcultura" />
+</row>
+<row name="dt_leitura" null="1" autoincrement="0">
+<datatype>DATETIME</datatype>
+<default>NULL</default></row>
+<row name="valor_leitura" null="1" autoincrement="0">
+<datatype>DOUBLE</datatype>
+<default>NULL</default></row>
+<row name="hora_leitura" null="1" autoincrement="0">
+<datatype>TIMESTAMP</datatype>
+<default>NULL</default></row>
+<key type="PRIMARY" name="">
+<part>idsensorpk</part>
+</key>
+</table>
+</sql>
